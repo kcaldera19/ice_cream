@@ -15,7 +15,7 @@ function iceCreamToppingsCal(event) {
     event.preventDefault();
     let iceForm = event.target;
     // fixs
-    let totalOrder = 1.25 Number(iceForm.numOfScoops.value);
+    let totalOrder = 1.25 *Number(iceForm.numOfScoops.value);
 
     let toppingsCost = 0;
     if (iceForm.coneOrCup.value === "cup") {
