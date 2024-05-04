@@ -71,10 +71,10 @@ function iceCreamToppingsCal(event) {
     // the message display on
     let message= `base Price:$${totalCost}
     Tax:$${taxes}
-    Total Due:$${totalAmount}`
+    Total Due:$${totalAmount.toFixed(2)}`
     
     console.log(message);
 }
-
+totalAmount(message);
 
 
