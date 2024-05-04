@@ -75,7 +75,7 @@ function iceCreamToppingsCal(event) {
     Tax:$${taxes.toFixed(2)}
     Total Due:$${totalAmount.toFixed(2)}`
 
-    let resultDiv =document.querySelector("#result");
+    let resultDiv =document.querySelector("#results");
     resultDiv.innerHTML = message;
 }
 
