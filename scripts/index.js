@@ -1,6 +1,6 @@
 "use strict"
 console.log("work");
-    // the page run only after the entire page is loaded
+// the page run only after the entire page is loaded
 window.onload = function () {
 
     // can name the varibale anthing I called it iceCreamForm
@@ -14,20 +14,41 @@ window.onload = function () {
 
 }
 
-    // added event(an action such as click or submit)in the parameter of the function
+// added event(an action such as click or submit)in the parameter of the function
 
 function iceCreamToppingsCal(event) {
     // stops the form from being submited 
     event.preventDefault();
     // retrieves the target element that gets the event which is iceCreamForm
     let iceForm = event.target;
-    // fixs
-    let totalOrder = 1.25 *Number(iceForm.numOfScoops.value);
 
+
+
+    let costOfCup = 2.25;
+    let costOfCone = 2.25;
+    let costPerScoop = 1.25;
+
+    let totalCost = 0;
+    let toppingsCost = 0;
+
+    if (iceForm.coneOrCup.value === "cone") {
+        // total = 2.25 =(1.25* nummber of scoops) for cone
+        totalCost = costOfCone + (costPerScoop * Number(iceForm.numOfScoops.value));
+
+
+    }
+    let message =`The cost cone is$${2.25.toFixed(2)}`
+    
 
     // the topping options
-    let toppingsCost = 0;
-    if (iceForm.coneOrCup.value === "cup") {
+
+
+    else if (iceForm.coneOrCup.value === "cup") {
+        // total= 2.25(1.25* number of scoops) fro cup
+        totalCost = costOfCup + (costPerScoop * Number(iceForm.numOfScoops.value));
+        
+        // topping for cup
+
         if (iceForm.sprinkles.checked) {
             toppingsCost += .50;
 
@@ -45,7 +66,9 @@ function iceCreamToppingsCal(event) {
         }
     }
 
-    let totalAmount = totalOrder + toppingsCost;
+
+    let totalAmount = totalCost + toppingsCost;
+    let message = `cone`
     console.log(totalAmount);
 }
 
