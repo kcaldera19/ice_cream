@@ -75,6 +75,6 @@ function iceCreamToppingsCal(event) {
     
     console.log(message);
 }
-totalAmount(message);
+
 
 
