@@ -27,7 +27,7 @@ function iceCreamToppingsCal(event) {
     let costOfCup = 2.25;
     let costOfCone = 2.25;
     let costPerScoop = 1.25;
-    let taxes = 8.75/100;
+    let taxes = .875;
     let totalCost = 0;
     let toppingsCost = 0;
 
