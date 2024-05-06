@@ -27,13 +27,13 @@ function iceCreamToppingsCal(event) {
     let costOfCup = 2.25;
     let costOfCone = 2.25;
     let costPerScoop = 1.25;
-    let taxes = .875;
+    let taxes = (8.75/100);
     let totalCost = 0;
     let toppingsCost = 0;
 
     if (iceForm.coneOrCup.value === "cone") {
-        // total = 2.25 =(1.25* nummber of scoops)*.875 or 8.75 for tax for cone
-        totalCost = costOfCone + (costPerScoop * Number(iceForm.numOfScoops.value)*taxes);
+        // total = 2.25 (1.25* nummber of scoops)*.875 or 8.75 for tax for cone
+        totalCost = costOfCone + (costPerScoop * Number(iceForm.numOfScoops.value-1));
 
 
     }
@@ -44,7 +44,7 @@ function iceCreamToppingsCal(event) {
 
     else if (iceForm.coneOrCup.value === "cup") {
         // total= 2.25(1.25* number of scoops) fro cup
-        totalCost = costOfCup + (costPerScoop * Number(iceForm.numOfScoops.value)*taxes);
+        totalCost = costOfCup + (costPerScoop * Number(iceForm.numOfScoops.value-1));
         
         // topping for cup
 
@@ -67,12 +67,12 @@ function iceCreamToppingsCal(event) {
    
     // the total amount 
 
-    let totalAmount = totalCost + toppingsCost + taxes;
+    let totalAmount = totalCost + toppingsCost * taxes;
     // the message display on
     
     
     let message = `base Price:$${totalCost.toFixed(2)}
-    Tax:$${taxes.toFixed(2)}
+    Tax:$${totalAmount*taxes.toFixed(2)}
     Total Due:$${totalAmount.toFixed(2)}`
 
     let resultDiv =document.querySelector("#results");
