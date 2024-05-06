@@ -27,7 +27,7 @@ function iceCreamToppingsCal(event) {
     let costOfCup = 2.25;
     let costOfCone = 2.25;
     let costPerScoop = 1.25;
-    let taxes = (8.75/100);
+    let taxes = 8.75/100;
     let totalCost = 0;
     let toppingsCost = 0;
 
@@ -67,13 +67,14 @@ function iceCreamToppingsCal(event) {
    
     // the total amount 
 
-    let totalAmount = totalCost + toppingsCost * taxes;
+    let totalAmount = totalCost + toppingsCost;
+    let taxAmount = totalAmount *taxes
     // the message display on
     
     
     let message = `base Price:$${totalCost.toFixed(2)}
-    Tax:$${(totalAmount*taxes).toFixed(2)}
-    Total Due:$${(totalAmount+taxes).toFixed(2)}`
+    Tax:$${(taxAmount).toFixed(2)}
+    Total Due:$${(totalAmount+taxAmount).toFixed(2)}`
 
     let resultDiv =document.querySelector("#results");
     resultDiv.innerHTML = message;
